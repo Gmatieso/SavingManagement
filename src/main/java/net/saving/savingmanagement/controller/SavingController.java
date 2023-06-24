@@ -5,10 +5,7 @@ import net.saving.savingmanagement.model.Saving;
 import net.saving.savingmanagement.repository.CustomerRepository;
 import net.saving.savingmanagement.repository.SavingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,12 @@ public class SavingController {
     @GetMapping
     public List<Saving> getAllSaving() {
         return  savingRepository.findAll();
+    }
+
+    //build create saving REST API
+    @PostMapping
+    public  Saving createSaving(@RequestBody Saving saving){
+        //return  saved saving object
+        return  savingRepository.save(saving);
     }
 }
