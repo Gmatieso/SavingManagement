@@ -1,8 +1,10 @@
 package net.saving.savingmanagement.controller;
 
+import net.saving.savingmanagement.exception.ResourceNotFoundException;
 import net.saving.savingmanagement.model.PersonalSaving;
 import net.saving.savingmanagement.repository.PersonalSavingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +32,13 @@ public class PersonalSavingController {
     }
 
     //build get personalSaving by id REST API
+    @GetMapping("{id}")
+    public ResponseEntity<PersonalSaving> getPersonalSavingById(@PathVariable long id){
+        PersonalSaving personalSaving = personalSavingRepository.findById(id)
+                //throw an exception if id not found
+                .orElseThrow(()-> new ResourceNotFoundException("Personal Saving does not exist with id:" + id));
+        return  ResponseEntity.ok(personalSaving);
+    }
 
 
 }
