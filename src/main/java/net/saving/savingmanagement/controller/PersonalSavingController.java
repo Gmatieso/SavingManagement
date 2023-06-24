@@ -23,9 +23,13 @@ public class PersonalSavingController {
     }
 
     //build create PersonalSaving  REST API
+    @PostMapping
     public  PersonalSaving createPersonalSaving(@RequestBody PersonalSaving personalSaving){
         //returns saved personalSaving object
         return  personalSavingRepository.save(personalSaving);
     }
+
+    //build get personalSaving by id REST API
+
 
 }
