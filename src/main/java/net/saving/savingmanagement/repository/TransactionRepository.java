@@ -1,2 +1,8 @@
-package net.saving.savingmanagement.repository;public interface TransactionRepository {
+package net.saving.savingmanagement.repository;
+
+
+import net.saving.savingmanagement.model.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TransactionRepository extends JpaRepository<Transaction,Long> {
 }
