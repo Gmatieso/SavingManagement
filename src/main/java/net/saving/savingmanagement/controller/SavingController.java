@@ -40,4 +40,18 @@ public class SavingController {
                 .orElseThrow(()-> new ResourceNotFoundException("Saving does not exist with id:" + id));
                 return  ResponseEntity.ok(saving);
     }
+
+    //build update saving REST API
+    @PutMapping("{id}")
+    public ResponseEntity<Saving> updateSaving(@PathVariable long id,@RequestBody Saving savingDetails){
+        Saving updateSaving = savingRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Saving does not exist wiht id:" + id));
+        updateSaving.setProductName(savingDetails.getProductName());
+        updateSaving.setAmount(savingDetails.getAmount());
+
+        //save this object to the database
+        savingRepository.save(updateSaving);
+        //return updated info to the client
+        return ResponseEntity.ok(updateSaving);
+    }
 }
