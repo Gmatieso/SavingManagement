@@ -3,10 +3,7 @@ package net.saving.savingmanagement.controller;
 import net.saving.savingmanagement.model.PersonalSaving;
 import net.saving.savingmanagement.repository.PersonalSavingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,12 @@ public class PersonalSavingController {
     @GetMapping
     public List<PersonalSaving> getAllPersonalSaving() {
         return personalSavingRepository.findAll();
+    }
+
+    //build create PersonalSaving  REST API
+    public  PersonalSaving createPersonalSaving(@RequestBody PersonalSaving personalSaving){
+        //returns saved personalSaving object
+        return  personalSavingRepository.save(personalSaving);
     }
 
 }
