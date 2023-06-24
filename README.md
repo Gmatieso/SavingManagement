@@ -23,13 +23,16 @@ A Spring Boot API for a Simple Savings System
    descriptions and examples for each endpoint.
 
 ## Customer Tbl:
+![customer tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/6cb3190f-9608-448e-98de-080d3288df40)
 
-![customer tbl.png](..%2F..%2FDownloads%2Fcustomer%20tbl.png)
+
 
 ## Transaction Tbl:
-![transactions tbl.png](..%2F..%2FDownloads%2Ftransactions%20tbl.png)
+![transactions tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/c0dce5e4-ac80-4e5f-9451-e546fb126a18)
+
 
 ## Savings Tbl:
-![savings tbl.png](..%2F..%2FDownloads%2Fsavings%20tbl.png)
+![savings tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/a4210335-3210-4b9e-b5cc-fa3f726a2b77)
+
 
 ## API Reference
