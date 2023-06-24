@@ -3,10 +3,7 @@ package net.saving.savingmanagement.controller;
 import net.saving.savingmanagement.model.Transaction;
 import net.saving.savingmanagement.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +22,12 @@ public class TransactionController {
     public List<Transaction> getAllTransaction() {
         return transactionRepository.findAll();
     }
+
+    //build create transaction REST API
+    @PostMapping
+    public Transaction createTransaction(@RequestBody Transaction transaction){
+        //return saved transaction object
+        return transactionRepository.save(transaction);
+    }
+
 }
