@@ -61,7 +61,7 @@ public class CustomerController {
     public  ResponseEntity<HttpStatus> deleteCustomer(@PathVariable  long id) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Customer does not exist with id:" + id));
-        //delete employee details frm the database
+        //delete customer details frm the database
         customerRepository.delete(customer);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
