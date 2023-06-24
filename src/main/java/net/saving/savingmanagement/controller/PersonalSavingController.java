@@ -4,6 +4,7 @@ import net.saving.savingmanagement.exception.ResourceNotFoundException;
 import net.saving.savingmanagement.model.PersonalSaving;
 import net.saving.savingmanagement.repository.PersonalSavingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,5 +57,16 @@ public class PersonalSavingController {
         return ResponseEntity.ok(updatePersonalSaving);
     }
 
+
+    //build delete personalSaving REST API
+    @DeleteMapping("{id}")
+    public ResponseEntity<HttpStatus> deletepersonalSaving(@PathVariable long id) {
+        PersonalSaving personalSaving = personalSavingRepository.findById(id)
+                //throw exception if id not found
+                .orElseThrow(()-> new ResourceNotFoundException("Personal Saving does not exist with id:" + id));
+        //deletes personalSaving details from the database
+        personalSavingRepository.delete(personalSaving);
+        return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
 }
