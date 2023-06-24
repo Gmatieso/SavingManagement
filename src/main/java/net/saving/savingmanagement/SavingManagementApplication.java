@@ -62,7 +62,15 @@ public class SavingManagementApplication implements CommandLineRunner {
 		//Seeding PersonalSaving
 		PersonalSaving personalsaving = new PersonalSaving();
 		personalsaving.setName("Geoffrey Matieso");
-		personalsaving.setTotalSavings(220);
+		personalsaving.setTotalSavings(220.00);
+		personalSavingRepository.save(personalsaving);
+
+		PersonalSaving personalsaving1 = new PersonalSaving();
+		personalsaving1.setName("Peter Nderitu");
+		personalsaving1.setTotalSavings(130.50);
+		personalSavingRepository.save(personalsaving1);
+
+
 
 
 	}
