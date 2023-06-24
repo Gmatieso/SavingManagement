@@ -23,6 +23,7 @@ public class TransactionController {
     //GET a list of all transaction
     @GetMapping
     public List<Transaction> getAllTransaction() {
+
         return transactionRepository.findAll();
     }
 

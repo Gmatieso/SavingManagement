@@ -82,6 +82,8 @@ public class SavingManagementApplication implements CommandLineRunner {
 		transaction.setTransactionDate("2023-06-01 09:15:00");
 		transaction.setPaymentMethod("Cash");
 		transaction.setAmount(100);
+		//save our transaction to go to the database
+		transactionRepository.save(transaction);
 
 
 
