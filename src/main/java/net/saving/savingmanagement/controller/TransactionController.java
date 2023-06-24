@@ -1,2 +1,12 @@
-package net.saving.savingmanagement.controller;public class TransactionController {
+package net.saving.savingmanagement.controller;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@CrossOrigin("*")
+@RestController
+//defining a base url of all the api
+@RequestMapping("/api/v1/transaction")
+public class TransactionController {
 }
