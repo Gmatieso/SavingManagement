@@ -22,7 +22,7 @@ public class PersonalSaving {
     private String Name;
 
     @Column(name ="total_savings")
-    private Integer totalSavings;
+    private double totalSavings;
 
 
 }
