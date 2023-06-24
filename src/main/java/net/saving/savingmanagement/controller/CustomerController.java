@@ -4,6 +4,7 @@ import net.saving.savingmanagement.exception.ResourceNotFoundException;
 import net.saving.savingmanagement.model.Customer;
 import net.saving.savingmanagement.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,5 +54,15 @@ public class CustomerController {
         customerRepository.save(updateCustomer);
         //return updated info to the client
         return ResponseEntity.ok(updateCustomer);
+    }
+
+    // build delete Customer   REST API
+    @DeleteMapping("{id}")
+    public  ResponseEntity<HttpStatus> deleteCustomer(@PathVariable  long id) {
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Customer does not exist with id:" + id));
+        //delete employee details frm the database
+        customerRepository.delete(customer);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
