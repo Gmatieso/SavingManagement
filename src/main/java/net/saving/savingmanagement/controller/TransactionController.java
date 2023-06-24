@@ -4,6 +4,7 @@ import net.saving.savingmanagement.exception.ResourceNotFoundException;
 import net.saving.savingmanagement.model.Transaction;
 import net.saving.savingmanagement.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,6 +57,17 @@ public class TransactionController {
         transactionRepository.save(updateTransaction);
         //retrun updated info to the client
         return ResponseEntity.ok(updateTransaction);
+    }
+
+    //build delete transaction REST API
+    @DeleteMapping("{id}")
+    public  ResponseEntity<HttpStatus> deleteTransaction(@PathVariable long id ){
+        Transaction transaction = transactionRepository.findById(id)
+                //throw exception if id not found
+                .orElseThrow(()-> new ResourceNotFoundException("Transaction does not exist with id:" + id));
+        //deletes transaction details from the database
+        transactionRepository.delete(transaction);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }
