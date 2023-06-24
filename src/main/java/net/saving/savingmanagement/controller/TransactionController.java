@@ -41,4 +41,21 @@ public class TransactionController {
         return  ResponseEntity.ok(transaction);
     }
 
+    //build update transaction REST API
+    @PutMapping("{id}")
+    public  ResponseEntity<Transaction> updateTransation(@PathVariable long id, @RequestBody Transaction transactionDetails){
+        Transaction updateTransaction = transactionRepository.findById(id)
+                //throw exception if id not found
+                .orElseThrow(()-> new ResourceNotFoundException("Transaction does not exist with id:" + id));
+        //else update transaction if id is found
+        updateTransaction.setTransactionDate(transactionDetails.getTransactionDate());
+        updateTransaction.setPaymentMethod(transactionDetails.getPaymentMethod());
+        updateTransaction.setAmount(transactionDetails.getAmount());
+
+        //save this object to the database
+        transactionRepository.save(updateTransaction);
+        //retrun updated info to the client
+        return ResponseEntity.ok(updateTransaction);
+    }
+
 }
