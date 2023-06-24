@@ -1,8 +1,10 @@
 package net.saving.savingmanagement;
 
 import net.saving.savingmanagement.model.Customer;
+import net.saving.savingmanagement.model.PersonalSaving;
 import net.saving.savingmanagement.model.Saving;
 import net.saving.savingmanagement.repository.CustomerRepository;
+import net.saving.savingmanagement.repository.PersonalSavingRepository;
 import net.saving.savingmanagement.repository.SavingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,6 +22,10 @@ public class SavingManagementApplication implements CommandLineRunner {
 	private CustomerRepository customerRepository;
 	@Autowired
 	private SavingRepository savingRepository;
+
+	//autowiring our repository to communicate with thie file
+	@Autowired
+	private PersonalSavingRepository personalSavingRepository;
 	@Override
 	public void run(String... args) throws Exception {
 		// Seeding Customer
@@ -52,6 +58,12 @@ public class SavingManagementApplication implements CommandLineRunner {
 		saving2.setProductName("Vacation Savings");
 		saving2.setAmount(2500);
 		savingRepository.save(saving2);
+
+		//Seeding PersonalSaving
+		PersonalSaving personalsaving = new PersonalSaving();
+		personalsaving.setName("Geoffrey Matieso");
+		personalsaving.setTotalSavings(220);
+
 
 	}
 }
