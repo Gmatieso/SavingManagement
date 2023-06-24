@@ -6,6 +6,7 @@ import net.saving.savingmanagement.model.Saving;
 import net.saving.savingmanagement.repository.CustomerRepository;
 import net.saving.savingmanagement.repository.SavingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,5 +54,15 @@ public class SavingController {
         savingRepository.save(updateSaving);
         //return updated info to the client
         return ResponseEntity.ok(updateSaving);
+    }
+
+    //build delete Saving REST API
+    public ResponseEntity<HttpStatus> deleteSaving(@PathVariable long id){
+        Saving saving = savingRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Saving does not exist with id:" + id));
+        //delete saving details frm the database
+        savingRepository.delete(saving);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
