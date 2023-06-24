@@ -22,11 +22,11 @@ public class Customer {
     private String Name;
 
     @Column(name ="phone_number")
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     @Column(name="email_id")
     private String emailId;
 
     @Column(name="member_number")
-    private Integer memberNumber;
+    private String memberNumber;
 }
