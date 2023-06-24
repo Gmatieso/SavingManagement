@@ -1,8 +1,10 @@
 package net.saving.savingmanagement.controller;
 
+import net.saving.savingmanagement.exception.ResourceNotFoundException;
 import net.saving.savingmanagement.model.Transaction;
 import net.saving.savingmanagement.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +30,15 @@ public class TransactionController {
     public Transaction createTransaction(@RequestBody Transaction transaction){
         //return saved transaction object
         return transactionRepository.save(transaction);
+    }
+
+    //build get Transaction by id REST API
+    @GetMapping("{id}")
+    public ResponseEntity<Transaction> getTransactionById(@PathVariable long id){
+        Transaction transaction = transactionRepository.findById(id)
+                //throw and exception if id not  found
+                .orElseThrow(()-> new ResourceNotFoundException("Transaction does not exist with id:" + id));
+        return  ResponseEntity.ok(transaction);
     }
 
 }
