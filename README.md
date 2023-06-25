@@ -38,10 +38,10 @@ A Spring Boot API for a Simple Savings System
 ![personal savings tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/7f6a8d31-58d2-4692-b450-bfc54afab8a9)
 
 ## API Reference
-<br> Get your Postman API Documentation Here: </br>
-https://documenter.getpostman.com/view/21219256/2s93z6ejh8
+ Get your Postman API Documentation Here: 
+<br> https://documenter.getpostman.com/view/21219256/2s93z6ejh8 </br>
 ## Currently working on: 👨‍💻
-<br> Swagger API Documentation</br>
+ Swagger API Documentation
 ## TODO:✔
-<br> Writing API Test. </br>
+ Writing API Test. 
 
