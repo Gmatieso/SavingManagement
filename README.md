@@ -36,3 +36,10 @@ A Spring Boot API for a Simple Savings System
 
 
 ## API Reference
+<br> Get your Postman API Documentation Here: </br>
+https://documenter.getpostman.com/view/21219256/2s93z6ejh8
+## Currently working on: 👨‍💻
+<br> Swagger API Documentation</br>
+## TODO:✔
+<br> Writing API Test. </br>
+
