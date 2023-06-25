@@ -23,17 +23,19 @@ A Spring Boot API for a Simple Savings System
    descriptions and examples for each endpoint.
 
 ## Customer Tbl:
-![customer tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/6cb3190f-9608-448e-98de-080d3288df40)
+![customer tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/cacdcf61-0728-4cb4-8ce8-db569a6f3c42)
+
 
 ## Transaction Tbl:
-![transactions tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/c0dce5e4-ac80-4e5f-9451-e546fb126a18)
+![transactions tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/0863334f-e8a7-4d13-8fed-4c24f523fc0b)
+
 
 ## Savings Tbl:
-![savings tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/a4210335-3210-4b9e-b5cc-fa3f726a2b77)
+![savings tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/45e702be-2ba1-4d88-82bb-b1c487ff3d28)
+
 
 ## Personal savings Tbl:
-![personal savings tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/d377dfdf-60be-4e93-b6a7-0ab705efd00f)
-
+![personal savings tbl](https://github.com/Gmatieso/SavingManagement/assets/55885416/7f6a8d31-58d2-4692-b450-bfc54afab8a9)
 
 ## API Reference
 <br> Get your Postman API Documentation Here: </br>
