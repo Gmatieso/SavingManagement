@@ -1,4 +1,4 @@
-package net.saving.savingmanagement;
+package net.saving.savingmanagement.swaggerconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
